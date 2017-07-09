@@ -1,0 +1,101 @@
+<% include ../partials/header %>
+
+<div id="newFundraisingPage" class="container">
+        <form action="/fundraisers" method="POST">
+      <div id="basicInfo">
+        <h2>Basic Info</h2>
+        <div class="form-group">
+          <p>What type of page would you like to create?</p>
+          <label>
+            Individual Page:
+            <input id="individual" type="radio" name="pageType" value="individual" checked="checked">
+          </label>
+          <label>
+            Team Page:
+            <input id="team" type="radio" name="pageType" value="team">
+          </label>
+        </div>
+        <div id="individualInfo" class="form-group">
+            <label>
+              First Name:
+              <input id="firstName" class="form-control" type="text" name="firstName" required>
+            </label>
+            <label>
+              Last Name:
+              <input id="lastName" class="form-control" type="text" name="lastName" required>
+            </label>
+        </div>
+        <div id="teamInfo" class="form-group hidden">
+          <label>
+              Team Name:
+              <input id="teamName" class="form-control" type="text" name="teamName">
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            Email:
+            <input class="form-control" name="emailAddr" type="email" required>
+          </label>
+        </div>
+      </div>
+      <hr>
+      <div id="pageAddr">
+        <div class="form-group">
+          <h2>Fundraising Details</h2>
+          <p>What would you like to use to reference your page?</p>
+          <p>http://donate.palsprograms.org/ <span><input class="form-control inline" id="address" type="text" required></span><span class="helper">customize if required</span></p>
+        </div>
+      </div>
+      <div id="goal">
+        <div class="form-group">
+          <label>
+            Fundraising Goal:
+            <input class="form-control" type="number" name="goal" min="10" step="1" required>
+          </label>
+          <span class="helper">$1000 recommended</span>
+        </div>
+        <div class="form=group">
+          <label>
+            Page Description: <span class="helper"> example provided</span>
+            <textarea class="form-control" name="description" rows="5" cols="100" required>PALS programs is an organization that I'm part of that creates immersive experiences for young adults with Down syndrome and their peers to have fun, grow as individuals, and build transformative friendships. Please consider making a donation of any size to help this worthwhile cause. Thank you!</textarea>
+          </label>
+        </div>
+      </div>
+      <hr>
+      <div id="siteContent">
+        <h2>Personalization</h2>
+        <div class="form-group">
+          <p>What would you like to add?</p>
+          <label>
+            Photo:
+            <input id="photoRadio" type="radio" name="personalizeType" value="photo" checked="checked">
+          </label>
+          <label>
+            Video:
+            <input id="videoRadio" type="radio" name="personalizeType" value="video">
+          </label>
+        </div>
+        <div id="photoSection" class="form-group">
+          <label for="photo">File input</label>
+          <input id="photo" type="file" accept=".jpg, .jpeg, .png">
+          <p class="helper">Please choose a landscape photo in JPG, JPEG, or PNG format</p>
+        </div>
+        <div id="videoSection" class="form-group hidden">
+          <label for="videoURL">Fill in a youtube link:</label>
+          <p>http://youtube.com/watch?v=<input class="form-control inline" type="text" name="videoURL"><span class="helper">(e.g., dQw4w9WgXcQ)</span></p>
+        </div>
+      </div>
+      <hr>
+      <div id="submit">
+        <h2>Submit</h2>
+        <p>Please complete the captcha below. Thanks for helping protect PALS from spammers!</p>
+        <!-- Insert Captcha code -->
+      </div>
+      <button class="btn btn-primary btn-lg" type="submit">Create Page</button>
+    </form>
+    <a class="btn btn-default btn-lg" href="/">Cancel</a>
+  </div>
+
+<script type="text/javascript" src="/js/new.js"></script>
+
+<% include ../partials/footer %>

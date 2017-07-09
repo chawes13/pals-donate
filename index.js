@@ -30,6 +30,7 @@ app.get("/fundraisers/new", function(req, res){
 //Fundraisers Show route
 app.get("/fundraisers/:address", function(req, res){
    //locate
+   res.render("fundraisers/show");
 });
 
 app.listen(process.env.PORT, process.env.IP, function(){

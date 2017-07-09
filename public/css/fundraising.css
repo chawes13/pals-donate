@@ -8,6 +8,10 @@ body {
 	margin: 0 auto;
 }
 
+#newFundraisingPage {
+	max-width: 800px;
+}
+
 #fundraisingContent h1 {
 	margin-top: 0;
 }
@@ -56,7 +60,18 @@ ol {
 }
 
 .helper {
+	margin-left: 5px;
 	color: steelblue;
-	font-size: 0.95em;
+	font-size: 0.9em;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.form-control.inline {
+	display: inline;
+	width: auto;
+}
+
+.form-control {
 	font-weight: normal;
 }
