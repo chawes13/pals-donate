@@ -1,7 +1,46 @@
-<h1>Index</h1>
+<% include ./partials/header %>
 
-<h2>Info</h2>
-<p>Start Date: <%= campaign.year %></p>
-<p>Days Left: <%= campaign.daysLeft() %></p>
-<p>Total Fundraisers: <%= fundraiserCount %></p>
+<div id="fundraisingContent" class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<h1>PALS Fundraising Campaign</h1>
+			<p>
+				PALS programs provide a place for young adults with Down syndrome and their peers to have fun, grow as individuals, and develop transformative friendships. Our community is grateful for your support in helping to ensure the growth and expansion of the PALS organization for years to come!
+			</p>
+			<p>
+				<strong>You can also mail a check to "PALS Programs" at 4965 Grundy Way, Doylestown, PA 18902. </strong>
+			</p>
+		</div>
+		<div class="col-md-3">
+			<a id="donateNow" class="btn btn-success btn-lg" href="#">Donate Now!</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-9">
+			<!-- Add JS for gallery -->
+			<img class="img-rounded img-responsive" src="/public/images/Conor_CPC2.jpg">
+		</div>
+		<div id="donors" class="col-md-3">
+			<table class="table">
+				<thead>
+					<th>Top Fundraisers</th>
+					<th>View All</th>
+				</thead>
+				<tr>
+					<td>Jason Toff</td>
+					<td>$22,600</td>
+				</tr>
+				<tr>
+					<td>Jessica Trief</td>
+					<td>$5,296</td>
+				</tr>
+				<tr>
+					<td>Kyle Stolarz</td>
+					<td>$1,000</td>
+				</tr>
+			</table>
+			<a class="btn btn-primary btn-sm" href="/fundraisers/new">Create a fundraising page</a>
+		</div>
+	</div>
 
+<% include ./partials/footer %>

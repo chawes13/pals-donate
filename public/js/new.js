@@ -49,7 +49,7 @@ lastName.addEventListener("input", updatePageAddress);
 teamName.addEventListener("input", updatePageAddress);
 
 pageAddress.addEventListener("input", function(){
-	pageAddress.value = pageAddress.value.toLowerCase();	
+	pageAddress.value = cleanAddressInput(pageAddress.value);	
 });
 
 //Personalize Interactions
@@ -73,11 +73,15 @@ videoRadioButton.addEventListener("click", function(){
 
 function updatePageAddress(){
 	var address = "";
-	if(teamName){
+	if(teamName.value){
 		address = teamName.value;	
 	} else {
 		address = firstName.value + lastName.value;
 	}
 	
-	pageAddress = address.toLowerCase();
+	pageAddress.value = cleanAddressInput(address);
+}
+
+function cleanAddressInput(address){
+	return address.replace(/\W/g, "").toLowerCase();
 }

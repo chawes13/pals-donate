@@ -5,6 +5,7 @@ var mongoose    = require('mongoose'),
 var maxlength = [400, 'The value of path `{PATH}` (`{VALUE}`) exceeds the maximum allowed length ({MAXLENGTH}).'];
 
 var fundraiserSchema = new mongoose.Schema({
+    campaign_id: mongoose.Schema.Types.ObjectId,
     type: String,
     firstName: String,
     lastName: String,
@@ -19,21 +20,10 @@ var fundraiserSchema = new mongoose.Schema({
         {type: String, maxlength: maxlength},
     photoURL: String,
     videoURL: String,
-    donors: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Donor"
-    }],
-    campaign: {
-        id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Campaign"
-        },
-        year: Number
-    },
     created:
         {type: Date, default: Date.now()}
 });
 
-fundraiserSchema.index({ pageAddress: 1, campaign: 1 }, { unique: true });
+fundraiserSchema.index({ pageAddress: 1, campaign_id: 1 }, { unique: true });
 
 module.exports = mongoose.model("Fundraiser", fundraiserSchema);

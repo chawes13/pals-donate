@@ -11,7 +11,7 @@ var campaignSchema = new mongoose.Schema({
 });
 
 campaignSchema.methods.totalFundraisers = function totalFundraisers() {
-    Fundraiser.count({campaign: this}, function(err, count){
+    Fundraiser.count({campaign_id: this._id}, function(err, count){
        if(err){
            console.log(err);
        } else {
@@ -21,7 +21,7 @@ campaignSchema.methods.totalFundraisers = function totalFundraisers() {
 };
 
 campaignSchema.methods.fundraisers = function fundraisers(cb){
-    return Fundraiser.find({ campaign: this}, cb);
+    return Fundraiser.find({ campaign_id: this._id}, cb);
 };
 
 campaignSchema.methods.daysLeft = function daysLeft() {

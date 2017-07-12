@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var donorSchema = new mongoose.Schema({
+    fundraiser_id: mongoose.Schema.Types.ObjectId,
     firstName: String,
     lastName: String,
     email: 
